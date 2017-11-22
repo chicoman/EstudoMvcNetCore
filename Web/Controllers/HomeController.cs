@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Web.Models;
 using Microsoft.AspNetCore.Http;
+using Web.Helpers;
 
 namespace Web.Controllers
 {
@@ -31,6 +32,9 @@ namespace Web.Controllers
             //Com a Sessao serializavel podemos guardar objetos
             HttpContext.Session.Set<DateTime>(SessionKeyData, DateTime.Now);
 
+            //Exemplo de Conexão
+            //SqlData sql = new SqlData();
+            //var resultado = sql.ExecutaSelect("Select * from Usuario");
 
             return View();
         }
