@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Web.Models;
 
 namespace Web
 {
@@ -23,6 +25,8 @@ namespace Web
         {
             services.AddMvc();
 
+            //Server = myServerAddress; Database = myDataBase; User Id = myUsername; Password = myPassword;
+            services.AddDbContext<MvcMovieContext>(options => options.UseSqlServer("Server=52.44.60.121;Database=EstudoMvcNetCore;User Id=sa;Password=Desenv123!!;"));
 
             //Adicionar Implementação para Cache Distribuido. // Bertuzzi
             services.AddDistributedMemoryCache();
